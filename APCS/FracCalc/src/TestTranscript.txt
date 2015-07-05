@@ -1,0 +1,61 @@
+Welcome to FracCalc!
+Enter an equation, or "quit" to end.
+3/4 * -4/3
+-1
+Enter an equation, or "quit" to end.
+3/4 * -1_1/3
+-1
+Enter an equation, or "quit" to end.
+3/4 * 4/3
+1
+Enter an equation, or "quit" to end.
+4/3 / 4/3
+1
+Enter an equation, or "quit" to end.
+3/4 / -1_1/3
+-9/16
+Enter an equation, or "quit" to end.
+3/4 / 1_1/3
+9/16
+Enter an equation, or "quit" to end.
+2 * 4/5
+1_3/5
+Enter an equation, or "quit" to end.
+1_2/3 - 4_5/6
+-3_1/6
+Enter an equation, or "quit" to end.
+1/2 + 2/3
+1_1/6
+Enter an equation, or "quit" to end.
+11/17 - -1/17
+12/17
+Enter an equation, or "quit" to end.
+-1 * -1/2
+1/2
+Enter an equation, or "quit" to end.
+8/4 + 2
+4
+Enter an equation, or "quit" to end.
+1/4 + 1_1/2
+1_3/4
+Enter an equation, or "quit" to end.
+-2_4/5 - -2_4/5
+0
+Enter an equation, or "quit" to end.
+-2_4/5 / -2_4/5
+1
+Enter an equation, or "quit" to end.
+1 + 2 + 3 - 4
+2
+Enter an equation, or "quit" to end.
+1/2 * 3 - 7/8
+5/8
+Enter an equation, or "quit" to end.
+1_3/4 + 2 / 1_4/4
+2_3/4
+Enter an equation, or "quit" to end.
+4 * 0 - 9_16/17
+-9_16/17
+Enter an equation, or "quit" to end.
+quit
+Goodbye.
