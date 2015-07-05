@@ -25,25 +25,9 @@ public class Program
 				// The user entered "quit" so break out of here.
 				moreToDo = false;
 			}
-			else if (input.equals("test"))
+			else if (input.equalsIgnoreCase("test"))
 			{
-				printFraction(0, 2);
-				printFraction(3, -4);
-				printFraction(-7, 3);
-				printFraction(8, 2);
-				printFraction(504, 924);
-
-				processStatement("1/4 + 1_1/2");
-				processStatement(" 8/4 + 2 ");
-				processStatement("-1 * -1/2 ");
-				processStatement(" 11/17 - -1/17");
-				processStatement("1/2 + 2/3");
-				processStatement(" 1 + 2 * 3 ");
-				// processStatement("1 + + 1/2");
-				processStatement("4/3 / 1/2 + 3_2/7 ");
-				processStatement(" 6/7 - 2_3/4 * 1_1/2");
-				processStatement("3/8");
-
+				runTests();
 			}
 			else
 			{
@@ -53,6 +37,26 @@ public class Program
 		}
 		sc.close();
 		System.out.println("Goodbye.");
+	}
+
+	private static void runTests()
+	{
+		printFraction(0, 2);
+		printFraction(3, -4);
+		printFraction(-7, 3);
+		printFraction(8, 2);
+		printFraction(504, 924);
+
+		processStatement("1/4 + 1_1/2");
+		processStatement(" 8/4 + 2 ");
+		processStatement("-1 * -1/2 ");
+		processStatement(" 11/17 - -1/17");
+		processStatement("1/2 + 2/3");
+		processStatement(" 1 + 2 * 3 ");
+		// processStatement("1 + + 1/2");
+		processStatement("4/3 / 1/2 + 3_2/7 ");
+		processStatement(" 6/7 - 2_3/4 * 1_1/2");
+		processStatement("3/8");
 	}
 
 	/*
