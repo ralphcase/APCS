@@ -1,0 +1,5 @@
+load example.txt
+C6 = "Total"
+C7 = "Average"
+D6 = ( sum D2 - D4 )
+D7 = ( avg D2 - D4 )
