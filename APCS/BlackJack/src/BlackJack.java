@@ -1,11 +1,15 @@
 import java.util.Scanner;
 
-public class BlackJack
-{
-	static Scanner input;
-	public static void main(String[] args)
-	{
+/**
+ * This is the entry point for a Blackjack game.
+ *
+ */
+public class BlackJack {
+	private static Scanner input;
+
+	public static void main(String[] args) {
 		input = new Scanner(System.in);
+		// Store players in an array.
 		Player[] players = new Player[2];
 
 		System.out.println("Welcome to BlackJack!");
@@ -15,8 +19,7 @@ public class BlackJack
 		players[1] = new Player(input.next());
 
 		boolean again = true;
-		while (again)
-		{
+		while (again) {
 			play(players);
 			System.out.print("Play again (y/n)? ");
 			String action = input.next();
@@ -27,25 +30,28 @@ public class BlackJack
 		input.close();
 	}
 
-	public static void play(Player[] players)
-	{
+	/**
+	 * Play one match and update the players scores.
+	 * 
+	 * @param players
+	 *            - an array of Player
+	 */
+	public static void play(Player[] players) {
 		Match match = new Match(players, input);
 		Player[] winner = match.play();
-		if (winner.length > 1)
-		{
+		if (winner.length > 1) {
 			System.out.println("The game was a tie.");
-			// TODO do we need to add a half point to each?
-		}
-		else
-		{
+			for (Player p : winner) {
+				p.addTie();
+			}
+		} else if (winner.length == 0) {
+			System.out.println("Both players lose!");
+		} else {
 			System.out.println(winner[0].getName() + " wins!");
 			winner[0].addWin();
 		}
 
-		System.out.println(players[0].name + " has " + players[0].wins
-				+ " wins");
-		System.out.println(players[1].name + " has " + players[1].wins
-				+ " wins");
-
+		System.out.println(players[0].getTally());
+		System.out.println(players[1].getTally());
 	}
 }
