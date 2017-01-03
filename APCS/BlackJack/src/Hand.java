@@ -1,46 +1,44 @@
+import java.util.ArrayList;
 
 public class Hand {
-	private Card[] cards = new Card[52];
-	private int cardCount = 0;
+	private ArrayList<Card> cards = new ArrayList<Card>();
 
 	// No constructor needed - just use the default
 
 	public void addCard(Card card) {
-		cards[cardCount] = card;
-		cardCount++;
+		cards.add(card);
+	}
+
+	public Card getTopCard() {
+		return cards.get(0);
 	}
 
 	public void empty() {
-		cardCount = 0;
+		cards.clear();
 	}
 
 	/**
 	 * Get the total value of all the cards in the hand
-	 * 
 	 * @return the total points
 	 */
 	public int getSum() {
 		int sum = 0;
-		for (int i = 0; i < cardCount; i++) {
-			sum += cards[i].getPoints();
+		for (Card c : cards) {
+			sum += c.getPoints();
 		}
 		return sum;
 	}
 
 	public String toString() {
 		String output = "[";
-		for (int i = 0; i < cardCount - 1; i++) {
-			output += cards[i] + ", ";
+		for (int i = 0; i < cards.size() - 1; i++) {
+			output += cards.get(i) + ", ";
 		}
 
-		if (cardCount > 0) {
-			output += cards[cardCount - 1];
+		if (cards.size() > 0) {
+			output += cards.get(cards.size() - 1);
 		}
-		output += "] ( " + getSum() + ")";
+		output += "] (" + getSum() + ")";
 		return output;
-	}
-
-	public Card getTopCard() {
-		return cards[0];
 	}
 }

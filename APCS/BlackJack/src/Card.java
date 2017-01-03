@@ -3,6 +3,12 @@ public class Card {
 	// Model a card as an int from 1 to 13 for the rank and a char for the suit.
 	private int rank;
 	private char suit;
+	
+	private static final char[] SUITS = new char[] { 'S', 'C', 'D', 'H' };
+	
+	public static char[] getAllSuits() {
+		return SUITS;
+	}
 
 	public Card(int r, char s) {
 		rank = r;

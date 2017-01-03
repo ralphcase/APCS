@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class Match {
 	private static final int MAXHAND = 21;
-	private Player players[]; // The players in the Match
-	private Scanner input; // to get input from the user
 	private static int firstPlayer = 0; // a switch to alternate play order in
 										// each Match.
+	private Player players[]; 	// The players in the Match
+	private Scanner input; 		// get input from the user
 
 	public Match(Player[] p, Scanner in) {
 		players = p;
@@ -34,7 +34,7 @@ public class Match {
 		for (int i = 0; i < players.length; i++)
 			processPlayer((firstPlayer + i) % 2, deck);
 
-		return getWinners(getWinningSum());
+		return getWinners();
 	}
 
 	// Return the winning sum - the highest hand not over 21.
@@ -49,7 +49,8 @@ public class Match {
 	}
 
 	// return an array of players that had the given sum.
-	private Player[] getWinners(int winningSum) {
+	private Player[] getWinners() {
+		int winningSum = getWinningSum();
 		// No one won. Return an array with 0 players.
 		if (winningSum == -1)
 			return new Player[0];
@@ -74,11 +75,9 @@ public class Match {
 	}
 
 	// Allow one player to play the game.
-	public void processPlayer(int index, Deck deck) {
+	private void processPlayer(int index, Deck deck) {
 		Player currentPlayer = players[index];
 		System.out.println("==============");
-		// for (Player p : players)
-		// System.out.println(p);
 
 		// Show the hands.
 		for (Player p : players)
@@ -100,7 +99,9 @@ public class Match {
 		String action = input.next();
 		if (action.charAt(0) == 'h') {
 			// player chose to hit, so draw a card and add it to the hand.
-			current.getHand().addCard(deck.draw());
+			Card newCard = deck.draw();
+			System.out.println("You drew " + newCard.toString());
+			current.getHand().addCard(newCard);
 			if (current.getHand().getSum() > MAXHAND) {
 				System.out.println("Bust!");
 				result = false;

@@ -2,7 +2,7 @@
 public class Player {
 	private Hand hand;
 	private String name;
-	private double wins = 0;
+	private double wins = 0;	// double because a tie is half a win
 
 	public Player(String n) {
 		name = n;
@@ -13,10 +13,6 @@ public class Player {
 		wins++;
 	}
 
-	public String toString() {
-		return name + ": " + hand + " (" + hand.getSum() + ")";
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -25,7 +21,7 @@ public class Player {
 		return hand;
 	}
 
-	public String getTally() {
+	public String getScore() {
 		return name + " has " + wins + " wins.";
 	}
 

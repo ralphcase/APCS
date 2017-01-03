@@ -12,7 +12,7 @@ public class BlackJack {
 		// Store players in an array.
 		Player[] players = new Player[2];
 
-		System.out.println("Welcome to BlackJack!");
+		System.out.println("Welcome to Blackjack!");
 		System.out.print("Please enter the name of player 1: ");
 		players[0] = new Player(input.next());
 		System.out.print("Please enter the name of player 2: ");
@@ -50,8 +50,8 @@ public class BlackJack {
 			System.out.println(winner[0].getName() + " wins!");
 			winner[0].addWin();
 		}
-
-		System.out.println(players[0].getTally());
-		System.out.println(players[1].getTally());
+		System.out.println();
+		System.out.println(players[0].getScore());
+		System.out.println(players[1].getScore());
 	}
 }
