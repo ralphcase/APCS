@@ -80,7 +80,7 @@ public class Program
 
 			// Fractions are stored in improper form as just a numerator and a
 			// denominator.
-			// Do handle order of operations correctly, we look at the first
+			// To handle order of operations correctly, we look at the first
 			// three fractions and the first
 			// two operators in the statement:
 			// left fraction
